@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
+import '../screens/animation.dart';
 
 class Muziek extends StatefulWidget {
   @override
@@ -14,14 +15,23 @@ class _MuziekState extends State<Muziek> {
 
 
     return Center(
-        child: ElevatedButton(
-            onPressed: () {
-              playing ? audioSpeler.pause():
-              audioSpeler.play(AssetSource('media/music.mp3'), volume: 0.5);
-              playing = !playing;
-              setState(() {} );
-            },
-            child: Text(playing?"pause":"play", textScaleFactor: 2)
+        child: Column(
+          children: [
+            ElevatedButton(
+                onPressed: () {
+                  playing ? audioSpeler.pause():
+                  audioSpeler.play(AssetSource('media/music.mp3'), volume: 0.5);
+                  playing = !playing;
+                  setState(() {} );
+                },
+                child: Text(playing?"pause":"play", textScaleFactor: 2)
+            ),
+            Image.asset("assets/images/rosetattoo.jpg"),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(8.0,20,8,8),
+              child: Animatie(),
+            )
+          ],
         )
     );
   }

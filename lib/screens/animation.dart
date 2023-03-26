@@ -10,10 +10,10 @@ class AnimatieState extends State<Animatie> with SingleTickerProviderStateMixin 
 
   void initState() {
     animatieController = AnimationController(
-        duration: const Duration(seconds: 2),
+        duration: const Duration(seconds: 5),
         vsync: this
     );
-    animatie = Tween<double>(begin: 0, end: 10).animate(animatieController);
+    animatie = Tween<double>(begin: 20, end: 60).animate(animatieController);
     animatie.addListener(() {
       setState(() { });
     });
@@ -34,9 +34,8 @@ class AnimatieState extends State<Animatie> with SingleTickerProviderStateMixin 
   }
 
   Widget build(BuildContext context) {
-    return Transform.scale(
-        scale: 2,
-        child: Center(child: Text("Animatie", textScaleFactor: animatie.value))
+    return Container(
+        child: Center(child: Icon(Icons.music_note, size: animatie.value,))
     );
   }
 }

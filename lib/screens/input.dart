@@ -18,7 +18,7 @@ class InputState extends State<Input> {
     'blauw': Colors.blue
   };
   String keuzeKleur = 'rood';
-  String tekst = "Toon is cool";
+  String tekst = "Music rocks";
 
   @override
   Widget build(BuildContext context) {
@@ -68,10 +68,13 @@ class InputState extends State<Input> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text(
-                    tekst,
-                    textScaleFactor: 2,
-                    style: TextStyle(color: lijstMap[keuzeKleur]!),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(8.0,30,8,8),
+                    child: Text(
+                      tekst,
+                      textScaleFactor: 2,
+                      style: TextStyle(color: lijstMap[keuzeKleur]!),
+                    ),
                   )
                 ],
               ),

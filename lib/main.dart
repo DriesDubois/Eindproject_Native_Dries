@@ -8,7 +8,7 @@ void main() {
 class MyApp extends StatelessWidget {
   Widget build(BuildContext buildContext) => MaterialApp(
     home: DefaultTabController(
-      length: 5,
+      length: 4,
       child: Scaffold(
         backgroundColor: Colors.grey,
         appBar: AppBar(
@@ -22,11 +22,10 @@ class MyApp extends StatelessWidget {
                 Tab(text: lib.menu[1].title, icon: lib.menu[1].icon),
                 Tab(text: lib.menu[2].title, icon: lib.menu[2].icon),
                 Tab(text: lib.menu[3].title, icon: lib.menu[3].icon),
-                Tab(text: lib.menu[4].title, icon: lib.menu[4].icon),
               ]),
         ),
         body:
-        TabBarView(children: <Widget>[lib.menu[0].widget, lib.menu[1].widget, lib.menu[2].widget, lib.menu[3].widget, lib.menu[4].widget]),
+        TabBarView(children: <Widget>[lib.menu[0].widget, lib.menu[1].widget, lib.menu[2].widget, lib.menu[3].widget]),
       ),
     ),
   );
